@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 }
 
 // Consulta SQL para seleccionar todos los registros de la tabla "lenguajes"
-$sql = "SELECT id, nombre_de_lenguaje AS lenguaje, creador, inicio FROM lenguajes";
+$sql = "SELECT * FROM lenguajes";
 
 // Ejecutar la consulta
 $resultado = $conn->query($sql);
@@ -30,7 +30,7 @@ if ($resultado->num_rows > 0) {
 // Recorrer el array de lenguajes y mostrar la información
 foreach ($lenguajes as $lenguaje) {
     // Mostrar el nombre del lenguaje, su creador y año de inicio
-    echo $lenguaje["id"] . "º" . $lenguaje["lenguaje"] . " de " . $lenguaje["creador"] . "(" . $lenguaje["inicio"] . ")<br>";
+    echo $lenguaje["id"] . "º" . $lenguaje["nombre_de_lenguaje"] . " de " . $lenguaje["creador"] . "(" . $lenguaje["inicio"] . ")<br>";
 }
 
 // Cerrar la conexión a la base de datos
